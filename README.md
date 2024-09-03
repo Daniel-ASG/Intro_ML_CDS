@@ -160,7 +160,7 @@ Our classification experiments yielded compelling results, with **Random Forest*
 - **Random Forest's power lies in its ensemble nature,** combining multiple decision trees to reduce overfitting and capture complex relationships within the data. 
 - **Logistic Regression struggled to capture the complexity of the data (87.12% accuracy),** indicating that a linear model may not be the best fit for this task.  
 
-**(You can include a table or visualization showcasing the classification results here, if desired.)** 
+![Accuracy comparison](Images/classification.png) 
 
 <a id='Regression_Results'></a>
 ### 4.2 Regression Results
@@ -219,7 +219,9 @@ In our quest to predict song popularity, **Random Forest** again demonstrated it
 - **Danceability, Energy, and Valence Drive Engagement:**  Upbeat, positive songs with a strong rhythmic groove tend to resonate more with listeners, as indicated by the importance of these features. Focusing on these musical elements could lead to wider appeal and increased listener satisfaction.
 - **Unveiling Hidden Factors:**  While our model captured a significant portion of song popularity variance, the moderate R² suggests the influence of factors beyond the musical features analyzed. This motivates further exploration of social media trends, marketing data, and sentiment analysis to enhance predictive accuracy. Incorporating these external factors could potentially lead to even more accurate predictions, allowing Data Money to provide even more valuable insights to our clients.
 
-**(You can include a table, scatter plot, and feature importance visualization here to showcase your regression results.)**
+![Random Forest Scatter](Images/regression.png) 
+
+![Feature Importance](Images/feature_importance.png) 
 
 <a id='Clustering_Results'></a>
 ### 4.3. Clustering Results
