@@ -1,4 +1,8 @@
 # Machine Learning Essay
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+[![Python 3.8](https://img.shields.io/badge/python-3.12.4-blue.svg)](https://www.python.org/downloads/release/python-3124/) 
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Daniel-ASG/Intro_ML_CDS)](https://github.com/Daniel-ASG/Intro_ML_CDS) 
+[![GitHub last commit](https://img.shields.io/github/last-commit/Daniel-ASG/Intro_ML_CDS)](https://github.com/Daniel-ASG/Intro_ML_CDS)
 
 <a id='index'></a>
 # Index
@@ -303,3 +307,12 @@ This project provided valuable insights into applying machine learning technique
 1. Clone this repository to your local machine.
 2. Install the required libraries: `pip install -r requirements.txt`
 3. Open the Jupyter Notebooks and run the cells. 
+
+
+## Author
+
+Made by Daniel Gomes. Get in touch!
+
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fgithub.com&up_message=Portfolio)](https://daniel-asg.github.io/portfolio_projetos/)
+[![Email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:daniel.alexandre.eng@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daniel-asgomes)
