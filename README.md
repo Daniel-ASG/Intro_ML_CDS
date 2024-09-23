@@ -233,16 +233,17 @@ In our quest to predict song popularity, **Random Forest** again demonstrated it
 | Algorithm            | Silhouette Score | Number of Clusters |
 |---------------------|:----------------:|:-----------------:|
 | K-Means              |     0.2331      |        3          |
+| K-Means with PCA     |     0.3281      |        3          |
 | Affinity Propagation |     0.2238      |        3          |
 
-Our clustering analysis focused on segmenting wines based on their chemical characteristics, employing both K-Means and Affinity Propagation algorithms. Remarkably, both methods identified three distinct clusters with a high degree of agreement (Adjusted Rand Index of 0.769).  This suggests a robust and reliable segmentation of the wines. By leveraging these clusters, wine producers could potentially increase sales and customer satisfaction by offering products that are precisely aligned with distinct market segments.
+Our clustering analysis focused on segmenting wines based on their chemical characteristics, employing both K-Means, K-Means with PCA and Affinity Propagation algorithms. Remarkably, both methods identified three distinct clusters with a high degree of agreement (Adjusted Rand Index between 0.951 and 0.758).  This suggests a robust and reliable segmentation of the wines. By leveraging these clusters, wine producers could potentially increase sales and customer satisfaction by offering products that are precisely aligned with distinct market segments.
 
 **Wine Clusters Unveiled:**
 
-* **Cluster 1 (Light & Refreshing):** Characterized by lower alcohol content, richness in antioxidants, and a lighter color. Perfect for casual gatherings, outdoor lunches, and pairing with lighter dishes. 
-* **Cluster 2 (Bold & Intense):**  Distinguished by higher alcohol content, richness in minerals and antioxidants. Ideal for special celebrations, hearty dinners, and enjoying on cold winter nights.
-* **Cluster 3 (Acidic & Vibrant):**  Marked by higher acidity, vibrant colors, and a distinct chemical composition. Suitable for formal dinners, wine tastings, and pairing with dishes that have a touch of acidity or strong flavors. 
-
+* **Cluster 0 (Light & Crisp):** Characterized by lower alcohol content, richness in antioxidants, and a lighter color. Perfect for casual gatherings, outdoor lunches, and pairing with lighter dishes. 
+* **Cluster 1 (Elegant & Structured):**  Marked by higher acidity, vibrant colors, and a distinct chemical composition. Suitable for formal dinners, wine tastings, and pairing with dishes that have a touch of acidity or strong flavors. 
+* **Cluster 2 (Bold & Full-Bodied):**  Distinguished by higher alcohol content, richness in minerals and antioxidants. Ideal for special celebrations, hearty dinners, and enjoying on cold winter nights.
+* 
 These insights can empower wine producers, retailers, and sommeliers to make data-driven decisions about product recommendations, marketing strategies, and even the development of new wines tailored to specific consumer preferences.
 
 <a id='Top_Insights'></a>
@@ -261,7 +262,7 @@ Predicting song popularity goes beyond analyzing just the music itself.  While i
 <a id='Clustering_Insight'></a>
 **5.3. Clustering - The Power of Agreement:**
 
-Finding consistent results across multiple clustering algorithms, as we did with K-Means and Affinity Propagation, significantly strengthens the reliability of our wine segmentation, providing a solid foundation for targeted product development and marketing strategies. 
+Finding consistent results across multiple clustering algorithms, as we did with K-Means, K-Means with PCA and Affinity Propagation, significantly strengthens the reliability of our wine segmentation, providing a solid foundation for targeted product development and marketing strategies. 
 
 <a id='Conclusion'></a>
 ## 6.  Conclusion
