@@ -90,6 +90,7 @@ Our machine learning experiments generated a wealth of insightful results, which
 | Decision Tree     | 1.0000   | 1.0000    | 1.0000 | 1.0000   |
 | Random Forest     | 1.0000   | 1.0000    | 1.0000 | 1.0000   |
 | Logistic Regression | 0.8753   | 0.8751    | 0.8753 | 0.8749   |
+| XGBoost | 0.9781   | 0.9782    | 0.9781 | 0.9781   |
 
 **On the Validation data**
 
@@ -99,67 +100,79 @@ Our machine learning experiments generated a wealth of insightful results, which
 | Decision Tree     | 0.9507   | 0.9509    | 0.9507 | 0.9506   |
 | Random Forest     | 0.9446   | 0.9447    | 0.9446 | 0.9444   |
 | Logistic Regression | 0.8756   | 0.8759    | 0.8310 | 0.8527   |
+| XGBoost              | 0.9620   | 0.9709    | 0.9406 | 0.9555   |
 
 **On the Test data**
 
-| Algorithm        | Accuracy | Precision | Recall | F1-Score |
-|-------------------|----------|-----------|--------|----------|
-| KNN              | 0.9294   | 0.9310    | 0.9294 | 0.9290   |
-| Decision Tree     | 0.9554   | 0.9555    | 0.9554 | 0.9553   |
-| Random Forest     | **0.9623**   | 0.9624    | 0.9623 | 0.9622   |
+| Algorithm            | Accuracy | Precision | Recall | F1-Score |
+|---------------------|----------|-----------|--------|----------|
+| KNN                 | 0.9294   | 0.9310    | 0.9294 | 0.9290   |
+| Decision Tree       | 0.9554   | 0.9555    | 0.9554 | 0.9553   |
+| Random Forest       | 0.9623   | 0.9624    | 0.9623 | 0.9622   |
 | Logistic Regression | 0.8712   | 0.8710    | 0.8712 | 0.8709   |
+| **XGBoost**        | **0.9626**   | **0.9628**    | **0.9626** | **0.9625**   |
 
-Our classification experiments yielded compelling results, with **Random Forest** emerging as the top performer, achieving an impressive **accuracy of 96.23% on the test data**. This signifies its exceptional ability to accurately predict customer satisfaction based on the features analyzed.
+![Accuracy Comparison of Classification Algorithms](Images/classification.png)
+
+Our classification experiments yielded compelling results, with **XGBoost** emerging as the top performer, achieving an impressive **accuracy of 96.3% on the test data**. This signifies its exceptional ability to accurately predict customer satisfaction based on the features analyzed.
 
 <a id='Regression_Results'></a>
 ### 5.2. Song Popularity Forecasting
 
 **On the Training data**
 
-| Algorithm                      | R²      | MSE       | RMSE      | MAE       | MAPE     |
-|---------------------------------|----------|------------|-----------|------------|----------|
-| Linear Regression              | 0.0461  | 455.9961  | 21.3541  | 16.9982  | 8.6532  |
-| Decision Tree Regressor        | 0.9918  | 3.9404   | 1.9850   | 0.2141   | 0.0826  |
-| Random Forest Regressor         | 0.9028  | 46.4548  | 6.8158   | 4.8608   | 2.5780  |
-| Polynomial Regression          | 0.0942  | 432.9862  | 20.8083  | 16.4580  | 8.3505  |
-| Linear Regression Lasso         | 0.0074  | 474.4748  | 21.7824  | 17.3055  | 8.7367  |
-| Linear Regression Ridge        | 0.0461  | 455.9964  | 21.3541  | 16.9983  | 8.6534  |
-| Linear Regression ElasticNet    | 0.0078  | 474.2689  | 21.7777  | 17.2995  | 8.7323  |
-| Polynomial Regression Lasso    | 0.0092  | 473.6388  | 21.7632  | 17.2855  | 8.6997  |
-| Polynomial Regression Ridge   | 0.0932  | 433.4755  | 20.8201  | 16.4720  | 8.3727  |
-| Polynomial Regression ElasticNet | 0.0128  | 471.8783  | 21.7228  | 17.2442  | 8.6788  |
+| Algorithm                          | R²      | RMSE      | MAE      | MAPE     | MPE         |
+|------------------------------------|----------|-----------|----------|----------|-------------|
+| Linear Regression                  | 0.0461  | 21.3541  | 16.9982  | 8.6532   | -842.08     |
+| Decision Tree                      | 0.9918  | 1.9850   | 0.2141   | 0.0826   | -850.96     |
+| Random Forest                      | 0.9028  | 6.8158   | 4.8608   | 2.5779   | -856.24     |
+| Polynomial Regression              | 0.0942  | 20.8083  | 16.4580  | 8.3505   | -812.18     |
+| Lasso Regression                   | 0.0074  | 21.7824  | 17.3055  | 8.7367   | -850.96     |
+| Ridge Regression                   | 0.0461  | 21.3541  | 16.9983  | 8.6534   | -842.10     |
+| ElasticNet Regression              | 0.0078  | 21.7777  | 17.2995  | 8.7323   | -850.96     |
+| Polynomial Regression Lasso        | 0.0092  | 21.7632  | 17.2855  | 8.6997   | -850.96     |
+| Polynomial Regression Ridge        | 0.0932  | 20.8201  | 16.4720  | 8.3727   | -814.50     |
+| Polynomial Regression ElasticNet   | 0.0128  | 21.7228  | 17.2442  | 8.6788   | -850.96     |
+| XGBoost                            | 0.7736  | 10.4037  | 7.6817   | 3.4780   | -851.07     |
 
 **On the Validation data**
 
-| Algorithm                      | R²      | MSE       | RMSE      | MAE       | MAPE     |
-|---------------------------------|----------|------------|-----------|------------|----------|
-| Linear Regression              | 0.0399  | 458.4470  | 21.4114  | 17.0398  | 8.6825  |
-| Decision Tree Regressor        | 0.0636  | 447.1613  | 21.1462  | 16.8435  | 8.3958  |
-| Random Forest Regressor         | 0.3410  | 314.6580  | 17.7386  | 12.9303  | 7.0331  |
-| Polynomial Regression          | 0.0665  | 445.7682  | 21.1132  | 16.7499  | 8.5479  |
-| Linear Regression Lasso         | 0.0399  | 458.4470  | 21.4114  | 17.0398  | 8.6825  |
-| Linear Regression Ridge        | 0.0399  | 458.4448  | 21.4113  | 17.0393  | 8.6823  |
-| Linear Regression Elastic Net    | 0.0399  | 458.4470  | 21.4114  | 17.0398  | 8.6825  |
-| Polynomial Regression Lasso    | 0.0669  | 445.5829  | 21.1088  | 16.7435  | 8.5618  |
-| Polynomial Regression Ridge   | 0.0676  | 445.2434  | 21.1008  | 16.7385  | 8.5603  |
-| Polynomial Regression Elastic Net | 0.0561  | 450.7083  | 21.2299  | 16.8317  | 8.6552  |
+| Algorithm                          | R²      | RMSE      | MAE      | MAPE     | MPE         |
+|------------------------------------|----------|-----------|----------|----------|-------------|
+| Linear Regression                  | 0.0399  | 21.4114  | 17.0398  | 8.6825   | -845.13     |
+| Decision Tree                      | 0.0636  | 21.1462  | 16.8435  | 8.3958   | -845.36     |
+| Random Forest                      | 0.3410  | 17.7386  | 12.9303  | 7.0331   | -858.97     |
+| Polynomial Regression              | 0.0665  | 21.1132  | 16.7499  | 8.5479   | -831.68     |
+| Lasso Regression                   | 0.0399  | 21.4114  | 17.0398  | 8.6825   | -845.86     |
+| Ridge Regression                   | 0.0399  | 21.4113  | 17.0393  | 8.6823   | -845.11     |
+| ElasticNet Regression              | 0.0399  | 21.4114  | 17.0398  | 8.6825   | -845.86     |
+| Polynomial Regression Lasso        | 0.0669  | 21.1088  | 16.7435  | 8.5618   | -845.88     |
+| Polynomial Regression Ridge        | 0.0676  | 21.1008  | 16.7385  | 8.5603   | -832.97     |
+| Polynomial Regression ElasticNet   | 0.0561  | 21.2299  | 16.8317  | 8.6552   | -846.06     |
+| XGBoost                            | 0.0912  | 20.8323  | 16.5531  | 8.4874   | -846.02     |
 
 **On the Test data**
 
-| Algorithm                      | R²      | MSE       | RMSE      | MAE       | MAPE     |
-|---------------------------------|----------|------------|-----------|------------|----------|
-| Linear Regression              | 0.0512  | 461.9884  | 21.4939  | 17.1442  | 8.5314  |
-| Decision Tree Regressor        | 0.0905  | 442.8484  | 21.0440  | 16.8298  | 7.8832  |
-| Random Forest Regressor         | **0.4073**  | 288.6016  | 16.9883  | 12.1913  | 6.3176  |
-| Polynomial Regression          | 0.0884  | 435.6086  | 20.8712  | 16.5396  | 8.4228  |
-| Linear Regression Lasso         | 0.0512  | 461.9884  | 21.4939  | 17.1442  | 8.5314  |
-| Linear Regression Ridge        | 0.0512  | 461.9877  | 21.4939  | 17.1438  | 8.5324  |
-| Linear Regression Elastic Net    | 0.0512  | 461.9884  | 21.4939  | 17.1442  | 8.5314  |
-| Polynomial Regression Lasso    | 0.0873  | 436.1599  | 20.8844  | 16.5516  | 8.4383  |
-| Polynomial Regression Ridge   | 0.0883  | 435.6757  | 20.8728  | 16.5415  | 8.4282  |
-| Polynomial Regression Elastic Net | 0.0613  | 448.5815  | 21.1797  | 16.8022  | 8.5827  |
+| Algorithm                          | R²      | RMSE      | MAE      | MAPE     | MPE         |
+|------------------------------------|----------|-----------|----------|----------|-------------|
+| Linear Regression                  | 0.0512  | 21.4939  | 17.1442  | 8.5314   | -830.20     |
+| Decision Tree                      | 0.0905  | 21.0440  | 16.8298  | 7.8832   | -847.59     |
+| Random Forest                      | 0.4073  | 16.9883  | 12.1913  | 6.3176   | -861.50     |
+| Polynomial Regression              | 0.0884  | 20.8712  | 16.5396  | 8.4228   | -819.23     |
+| Lasso Regression                   | 0.0512  | 21.4939  | 17.1442  | 8.5314   | -849.31     |
+| Ridge Regression                   | 0.0512  | 21.4939  | 17.1438  | 8.5324   | -830.30     |
+| ElasticNet Regression              | 0.0512  | 21.4939  | 17.1442  | 8.5314   | -849.31     |
+| Polynomial Regression Lasso        | 0.0873  | 20.8844  | 16.5516  | 8.4383   | -848.96     |
+| Polynomial Regression Ridge        | 0.0883  | 20.8728  | 16.5415  | 8.4282   | -819.96     |
+| Polynomial Regression ElasticNet   | 0.0613  | 21.1797  | 16.8022  | 8.5827   | -848.96     |
+| **XGBoost**                        | **0.7118**  | **11.7349**  | **8.7977**  | **4.0081**   | **-849.05**     |
 
-In our quest to predict song popularity, **Random Forest** again demonstrated its prowess, achieving an **R² of 0.407 on the test data**. This indicates that the model can explain approximately 40% of the variability in song popularity, suggesting a moderate but promising predictive ability. 
+![XGBoost Model Evaluation](Images/regression.png)
+
+### **Notes:**
+- XGBoost demonstrates the model's ability to provide a balance between bias and variance, resulting in an effective prediction of song popularity.
+
+In our quest to predict song popularity, **XGBoost** again demonstrated its prowess, achieving an **R² of 0.712 on the test data**. This indicates that the model can explain approximately 70% of the variability in song popularity, suggesting a moderate but promising predictive ability. Additionally, the **RMSE of 11.73** signifies that, on average, the model's predictions deviate from the actual song popularity by approximately 11.73 points. This level of error is reasonable within the context of song popularity, reflecting the model's effectiveness while also highlighting areas for potential improvement.
 
 <a id='Clustering_Results'></a>
 ### 5.3. Wine Preference Clustering
@@ -183,8 +196,8 @@ This repository documents a series of successful machine learning projects, demo
 To further enhance the models and analysis, we are considering the following steps:
 
 * **Feature Engineering:** Explore and engineer new features based on domain knowledge and data exploration, potentially combining existing features or incorporating external data sources.
-* **Advanced Algorithms:** Experiment with more sophisticated algorithms, such as gradient boosting methods (XGBoost, LightGBM) or neural networks, to potentially improve predictive performance.
-* **Ensemble Techniques:** Investigate different ensemble techniques, beyond Random Forest, to combine the strengths of multiple models and further enhance accuracy and robustness.
+* **Advanced Algorithms:** Experiment with more sophisticated algorithms, such as gradient boosting methods (LightGBM) or neural networks, to potentially improve predictive performance.
+* **Ensemble Techniques:** Investigate different ensemble techniques, beyond Random Forest and XGBoost, to combine the strengths of multiple models and further enhance accuracy and robustness.
 * **Data Collection and Augmentation:** Gather additional data, especially for the regression task, to capture more factors that influence song popularity, such as social media engagement, marketing data, and expert reviews.
 * **Deployment and Monitoring:** Deploy the models into a production environment, potentially creating a user interface or integrating them into existing systems for real-time predictions. Implement monitoring mechanisms to track model performance over time and retrain the models as needed to maintain accuracy.
 
